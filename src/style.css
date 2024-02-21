@@ -1,1 +1,67 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+body {
+  background: green;
+  box-sizing: border-box;
+}
+
+.card {
+  text-align: center;
+  display: inline-block;
+  background: white;
+  margin: auto;
+  height: 400px;
+  font-size: 75px;
+  width: 250px;
+  padding: 20px;
+  padding-top: 150px;
+  /* line-height: 200px;  */
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 75px;
+  }
+  &::after {
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+    font-size: 75px;
+  }
+  .number-card {
+    font-size: 75px;
+    text-align: center;
+  }
+  &.spade:before {
+    content: "\2660";
+  }
+  &.spade:after {
+    content: "\2660";
+    transform: scaleY(-1);
+  }
+  &.club:before {
+    content: "\2663";
+  }
+  &.club:after {
+    content: "\2663";
+    transform: scaleY(-1);
+  }
+  &.heart:before {
+    content: "\2665";
+    color: red;
+  }
+  &.heart:after {
+    content: "\2665";
+    color: red;
+    transform: scaleY(-1);
+  }
+  &.diamond:before,
+  &.diamond:after {
+    content: "\2666";
+    color: red;
+  }
+}
